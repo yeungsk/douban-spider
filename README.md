@@ -5,7 +5,7 @@
 
 ## 项目介绍
 
-[豆瓣选影视页面](https://movie.douban.com/tag/#/?sort=U&range=0,10&tags=%E7%94%B5%E5%BD%B1)分别筛选地区为中国大陆、香港、台湾（可更换为其他地区），构造Ajax请求，获取电影id，再通过id构造电影链接，解析页面后获得电影详细数据，如名称、年份、导演、主演、类型等。具体可见我的博文：[爬虫实战（一）——利用scrapy爬取豆瓣华语电影](https://blog.csdn.net/weixin_43004311/article/details/82962159)。
+[豆瓣选影视页面](https://movie.douban.com/tag/#/?sort=U&range=0,10&tags=%E7%94%B5%E5%BD%B1)分别筛选地区为中国大陆、香港、台湾（可更换为其他地区），构造Ajax请求，获取电影id，再通过id构造电影链接，解析页面后获得电影详细数据，如名称、年份、导演、主演、类型等。具体可见我的博文：[爬虫实战（一）利用scrapy爬取豆瓣华语电影](https://blog.csdn.net/weixin_43004311/article/details/82962159)。
 
 
 
