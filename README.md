@@ -32,10 +32,11 @@ pip3 install -r requirements.txt
 ### 配置代理池
 
 ```bash
+cd ProxyPool
 cd proxypool
 ```
 
-进入proxypool目录，修改settings.py文件
+进入ProxyPool的proxypool目录，修改settings.py文件
 
 PASSWORD为Redis密码，如果为空，则设置为None
 
@@ -44,7 +45,7 @@ PASSWORD为Redis密码，如果为空，则设置为None
 ### 打开代理池和API
 
 ```bash
-cd proxypool
+cd ProxyPool
 python3 run.py
 ```
 
