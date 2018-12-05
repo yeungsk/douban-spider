@@ -14,16 +14,20 @@ collection = db['film']
 class MovieSpider(scrapy.Spider):
     name = "movie"
     allowed_domains = ["movie.douban.com"]
-    film_listurl = 'https://movie.douban.com/j/new_search_subjects?sort=U&range=0,10&tags=%E7%94%B5%E5%BD%B1&start={page}&countries={country}'
+    film_listurl = 'https://movie.douban.com/j/new_search_subjects?sort={sorttype}&range=0,10&tags=%E7%94%B5%E5%BD%B1&start={page}&countries={country}'
     film_url = 'https://movie.douban.com/subject/{id}/'
     # 可选择的地区：中国大陆 美国 香港 台湾 日本 韩国 英国 法国 德国 意大利 西班牙 印度 泰国 俄罗斯 伊朗 加拿大 澳大利亚 爱尔兰 瑞典 巴西 丹麦
     countrylist = ['中国大陆','香港','台湾']
+    # 可选择的排序方法
+    # U近期热门，S评分最高，R最新上映，T标记最多
+    sortlist = ['U','S','R','T']
 
     def start_requests(self):
-        for country in self.countrylist:
-            country = parse.quote(country)
-            for i in range(0,500):
-                yield Request(self.film_listurl.format(page=i * 20, country=country), callback=self.parse)
+        for sorttype in self.sortlist:
+            for country in self.countrylist:
+                country = parse.quote(country)
+                for i in range(0,500):
+                    yield Request(self.film_listurl.format(page=i * 20, country=country, sorttype=sorttype), callback=self.parse)
 
 
     def parse(self, response):
